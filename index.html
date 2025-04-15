@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Masukkan Jawaban Hadiah</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 200px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>MONYET APA YANG BERLARI DILAPANGAN?</h2>
+    <input type="text" id="Jawaban" placeholder="Masukkan Jawaban di sini" />
+    <br/>
+    <button onclick="cekJawaban()">Kirim</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    const JawabanBenar = "MONYETAK GOL";
+    const linkHadiah = "https://link.dana.id/danakaget?c=svngde9jr&r=gG6E86&orderId=20250415101214358715010300166662418015395";
+
+    function cekJawaban() {
+      const input = document.getElementById("Jawaban").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (input === JawabanBenar) {
+        window.location.href = linkHadiah;
+      } else {
+        errorMsg.textContent = "Jawaban salah, coba lagi.";
+      }
+    }
+  </script>
+</body>
+</html>
